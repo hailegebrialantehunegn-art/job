@@ -1,406 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Plastic Chair Factory | Job Registration Demo</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    :root {
-      --primary:#1A73E8;
-      --accent:#F7B801;
-      --bg:#FAFAFB;
-      --card:#FFFFFF;
-      --gray:#737373;
-      --shadow:0 2px 20px rgba(60,60,60,0.08);
-      --font:'Segoe UI',Arial,sans-serif;
-    }
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      margin: 0;
-      color: #222;
-    }
-    .navbar {
-      background: var(--primary);
-      color: #fff;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      height: 56px;
-      box-shadow: var(--shadow);
-      justify-content: space-between;
-    }
-    .logo {
-      font-size: 1.45rem;
-      font-weight: bold;
-      letter-spacing: 0.08em;
-      color: #fff;
-      display: flex; align-items: center;
-    }
-    .nav-links {
-      display: flex;
-      gap: 16px;
-    }
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: opacity .1s;
-    }
-    .nav-links a:hover { opacity: 0.7; }
-    .lang-switch {
-      background: var(--accent);
-      border: none;
-      padding: 7px 18px;
-      border-radius: 4px;
-      margin-left: 24px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #333;
-      font-size: 1rem;
-    }
-    main {
-      max-width: 900px;
-      margin: 36px auto 0 auto;
-      padding: 0 24px;
-    }
-    .about-card {
-      background: var(--card);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      padding: 24px 30px;
-      margin-bottom: 36px;
-      border-left: 6px solid var(--accent);
-    }
-    .about-card h2 {
-      font-weight: 600;
-      margin-top: 0;
-      color: var(--primary);
-      font-size: 1.33rem;
-    }
-    .registration-card {
-      background: var(--card);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      padding: 32px;
-      max-width: 425px;
-      margin: auto;
-      border-top: 5px solid var(--primary);
-    }
-    .registration-card h2 {
-      margin-top: 0;
-      color: var(--primary);
-      font-size: 1.23rem;
-    }
-    .form-group {
-      margin-bottom: 18px;
-    }
-    label {
-      font-weight: 500;
-      font-size: 1rem;
-      display: block;
-      margin-bottom: 6px;
-    }
-    input, select {
-      width: 100%;
-      padding: 7px 12px;
-      border-radius: 4px;
-      border: 1px solid #d1d1d1;
-      font-size: 1rem;
-      margin-bottom: 0;
-      background: var(--bg);
-    }
-    input[type="file"] {
-      border: none;
-    }
-    .registration-card button {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      padding: 10px 26px;
-      border-radius: 4px;
-      font-weight: bold;
-      font-size: 1.07rem;
-      margin-top: 16px;
-      cursor: pointer;
-      transition: background .1s;
-    }
-    .registration-card button:hover { background: #155cbc; }
-    .footer {
-      background: #292A2D;
-      color: #fff;
-      text-align: center;
-      padding: 22px 0;
-      margin-top: 60px;
-      font-size: .97rem;
-      box-shadow: var(--shadow);
-    }
-    /* Popup styles */
-    .popup-bg {
-      position: fixed;
-      top:0; left:0; width:100%; height:100%;
-      background:rgba(0,0,0,0.22);
-      display:flex;align-items:center;justify-content:center;
-      z-index:1200;
-    }
-    .popup-box {
-      background:var(--card);
-      padding:36px 24px;
-      border-radius:12px;
-      box-shadow:0 8px 26px rgba(0,0,0,0.14);
-      text-align:center;
-      min-width:320px;
-      max-width:90vw;
-      animation:pop .2s;
-    }
-    @keyframes pop { 0%{ transform:scale(.8) } 100%{ transform:scale(1) } }
-    .popup-box h3 {
-      color: var(--primary);
-      margin-bottom: 18px;
-    }
-    .popup-result {
-      background:#F7F8F9;
-      color:#252526;
-      font-size:1.05rem;
-      padding:18px 12px;
-      border-radius:7px;
-      border-left:4px solid var(--accent);
-      margin:18px 0;
-      white-space: pre-line;
-    }
-    .popup-close {
-      margin-top: 22px;
-      background: var(--accent);
-      border: none;
-      padding: 7px 20px;
-      border-radius: 5px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      color: #222;
-    }
-    @media (max-width:600px) {
-      main, .about-card, .registration-card { padding: 16px; }
-      .about-card { margin-bottom: 18px; }
-      .registration-card { padding: 16px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Job Registration Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+    font-family: Arial;
+    margin:0;
+    background:linear-gradient(135deg,#1f3c88,#2c5364);
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:600px;
+    margin:50px auto;
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h2{
+    text-align:center;
+}
+
+input, select, button{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+button{
+    background:#1f3c88;
+    color:white;
+    font-size:18px;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#162f66;
+}
+
+#messageBox{
+    margin-top:20px;
+    padding:15px;
+    background:#eef2ff;
+    border-radius:10px;
+    display:none;
+    text-align:center;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    background:rgba(0,0,0,0.4);
+}
+</style>
 </head>
+
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar" role="navigation">
-    <div class="logo" id="logo-text">Plastic Chair Factory (Demo)</div>
-    <div class="nav-links">
-      <a href="#" data-section="register" id="nav-register">Register</a>
-      <a href="#" data-section="about" id="nav-about">About</a>
-      <button class="lang-switch" id="lang-btn">🇪🇹 Amharic</button>
-    </div>
-  </nav>
-  <main>
-    <!-- ABOUT CARD -->
-    <section class="about-card" id="about-section">
-      <h2 id="about-title">About This Project Demo</h2>
-      <p id="about-description">
-        This is a school project demonstration for HR job registration. <br>
-        Features bilingual interface (English/Amharic), modern design, corporate branding, simulated file upload, and popup result. <br>
-        <b>No real data or payment is processed.</b>
-      </p>
-    </section>
-    <!-- REGISTRATION CARD -->
-    <section class="registration-card" id="register-section">
-      <h2 id="reg-title">Registration Form</h2>
-      <form id="reg-form" autocomplete="off">
-        <div class="form-group">
-          <label for="fullname" id="label-fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" required placeholder="e.g. Abebe Kebede">
-        </div>
-        <div class="form-group">
-          <label for="phone" id="label-phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required pattern="^(?:\+251|0)?9\d{8}$" placeholder="+2519xxxxxxxx">
-        </div>
-        <div class="form-group">
-          <label for="education" id="label-education">Education Level</label>
-          <select id="education" name="education" required>
-            <option value="">-- Select --</option>
-            <option value="primary">Primary School</option>
-            <option value="high">High School</option>
-            <option value="diploma">Diploma</option>
-            <option value="degree">Degree</option>
-            <option value="masters">Masters</option>
-            <option value="phd">PhD</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label id="label-upload">Upload Files <span style="color:#737373;font-size:.97em">(ID, certificates)</span></label>
-          <input type="file" name="files" id="files" multiple accept=".pdf,.jpg,.png,.jpeg,.doc,.docx">
-          <small id="upload-help" style="color:#999;">Simulated upload (no real storage).</small>
-        </div>
-        <button type="submit" id="submit-btn">Submit Registration</button>
-      </form>
-    </section>
-  </main>
-  <!-- FOOTER -->
-  <footer class="footer">
-    <span id="footer-text">© 2026 Plastic Chair Factory Demo - School Project. No real data is processed.</span>
-  </footer>
 
-  <!-- Popup Template (hidden by default) -->
-  <div id="popup" style="display:none;">
-    <div class="popup-bg">
-      <div class="popup-box">
-        <h3 id="popup-title">Registration Demo Complete!</h3>
-        <div class="popup-result" id="popup-result">
-          Bok Haleluya ;lkhcxzxgjnbhgvhgvchjv,gvfmxjgg;kvjchjk,mxgzjxckdxmgfkclgkxcldkh
-        </div>
-        <button class="popup-close" onclick="closePopup()">OK</button>
-      </div>
-    </div>
-  </div>
+<div class="container">
 
-  <script>
-    // Bilingual text dictionary
-    const dict = {
-      en: {
-        logo: "Plastic Chair Factory (Demo)",
-        navRegister: "Register",
-        navAbout: "About",
-        langBtn: "🇪🇹 Amharic",
-        aboutTitle:"About This Project Demo",
-        aboutDesc:"This is a school project demonstration for HR job registration.<br>Features bilingual interface (English/Amharic), modern design, corporate branding, simulated file upload, and popup result.<br><b>No real data or payment is processed.</b>",
-        regTitle:"Registration Form",
-        labelFullName:"Full Name",
-        labelPhone:"Phone Number",
-        labelEducation:"Education Level",
-        select:"-- Select --",
-        primary:"Primary School",
-        high:"High School",
-        diploma:"Diploma",
-        degree:"Degree",
-        masters:"Masters",
-        phd:"PhD",
-        labelUpload:"Upload Files",
-        uploadHelp:"Simulated upload (no real storage).",
-        submitBtn:"Submit Registration",
-        popupTitle:"Registration Demo Complete!",
-        popupResult:"Bok Haleluya ;lkhcxzxgjnbhgvhgvchjv,gvfmxjgg;kvjchjk,mxgzjxckdxmgfkclgkxcldkh",
-        popupClose:"OK",
-        footer:"© 2026 Plastic Chair Factory Demo - School Project. No real data is processed."
-      },
-      am: {
-        logo: "የሉእት የቲያትር ኩፋሌ ፋብሪካ (ስለማስተላለፊያ)",
-        navRegister: "መቀመጥ",
-        navAbout: "ስለፕሮጀክቱ",
-        langBtn: "🇬🇧 English",
-        aboutTitle:"ስለዚህ ፕሮጀክት የማስተላለፊያ ስለሆነ",
-        aboutDesc:"ይህ የትምህርት ፕሮጀክት ስለውስጥ ስራ መመዝገብ የማሳያ ተሰርቷል።<br>የቃላት ሁለት አፈን (እንግሊዝኛ/አማርኛ), ዘመናዊ ጥለኝነት, የኩፋሌ የኩፋሌ ብራንድ, የፋይለ ልክ ተዛማች ሁኔታና የፕሮጀክቱ ውጤት ፖፖፕ ተሰርቷል።<br><b>እውነተኛ ውሂብ ወይም ክፍያ አይከተልም።</b>",
-        regTitle:"የመመዝገብ ፎርም",
-        labelFullName:"የሙሉ ስም",
-        labelPhone:"ስልክ ቁጥር",
-        labelEducation:"የትምህርት ደረጃ",
-        select:"-- ይምረጡ --",
-        primary:"የመድረክ ትምህርት",
-        high:"የመካከለኛ ትምህርት",
-        diploma:"ዲፕሎማ",
-        degree:"ዲግሪ",
-        masters:"ማስተር",
-        phd:"ፒኤችዲ",
-        labelUpload:"ፋይሎችን ያስገቡ",
-        uploadHelp:"የተዛማችሁ ፋይል ስለሆነ ግል አያስቀምጥም።",
-        submitBtn:"መመዝገብ ያቅርቡ",
-        popupTitle:"የመመዝገብ አሳየ ተጠናቀቀ!",
-        popupResult:"Bok Haleluya ;lkhcxzxgjnbhgvhgvchjv,gvfmxjgg;kvjchjk,mxgzjxckdxmgfkclgkxcldkh",
-        popupClose:"አዎ",
-        footer:"© 2026 የቲያትር ኩፋሌ ፋብሪካ የትምህርት ፕሮጀክት ማሳያ። እውነተኛ ውሂብ አይከተልም።"
-      }
-    };
-    let lang = 'en'; // Default language
+<h2>Job Registration Portal<br>የስራ ምዝገባ ፖርታል</h2>
 
-    function setLang(l) {
-      lang = l;
-      const d = dict[l];
-      // Logo
-      document.getElementById('logo-text').textContent = d.logo;
-      // Nav links
-      document.getElementById('nav-register').textContent = d.navRegister;
-      document.getElementById('nav-about').textContent = d.navAbout;
-      // Language button
-      document.getElementById('lang-btn').textContent = d.langBtn;
-      // About section
-      document.getElementById('about-title').textContent = d.aboutTitle;
-      document.getElementById('about-description').innerHTML = d.aboutDesc;
-      // Registration form
-      document.getElementById('reg-title').textContent = d.regTitle;
-      document.getElementById('label-fullname').textContent = d.labelFullName;
-      document.getElementById('label-phone').textContent = d.labelPhone;
-      document.getElementById('label-education').textContent = d.labelEducation;
-      const sel = document.getElementById('education');
-      sel.querySelectorAll('option')[0].textContent = d.select;
-      sel.querySelectorAll('option')[1].textContent = d.primary;
-      sel.querySelectorAll('option')[2].textContent = d.high;
-      sel.querySelectorAll('option')[3].textContent = d.diploma;
-      sel.querySelectorAll('option')[4].textContent = d.degree;
-      sel.querySelectorAll('option')[5].textContent = d.masters;
-      sel.querySelectorAll('option')[6].textContent = d.phd;
-      document.getElementById('label-upload').textContent = d.labelUpload + " " +
-        '<span style="color:#737373;font-size:.97em">(ID, certificates)</span>';
-      document.getElementById('upload-help').textContent = d.uploadHelp;
-      document.getElementById('submit-btn').textContent = d.submitBtn;
-      // Footer
-      document.getElementById('footer-text').textContent = d.footer;
-      // Popup
-      document.getElementById('popup-title').textContent = d.popupTitle;
-      document.getElementById('popup-result').textContent = d.popupResult;
-      document.querySelector('.popup-close').textContent = d.popupClose;
-    }
+<form onsubmit="submitForm(event)">
 
-    // Language switch button
-    document.getElementById('lang-btn').onclick = function() {
-      setLang(lang === 'en' ? 'am' : 'en');
-    };
+<input type="text" placeholder="Full Name / ሙሉ ስም" required>
 
-    // Nav links scroll/section toggling
-    document.getElementById('nav-register').onclick = function(e) {
-      e.preventDefault();
-      document.getElementById('register-section').scrollIntoView({ behavior:"smooth" });
-    };
-    document.getElementById('nav-about').onclick = function(e) {
-      e.preventDefault();
-      document.getElementById('about-section').scrollIntoView({ behavior:"smooth" });
-    };
+<input type="text" placeholder="Phone Number / ስልክ ቁጥር" required>
 
-    // Form submission: simulate, show popup
-    document.getElementById('reg-form').onsubmit = function(e) {
-      e.preventDefault();
-      // Validate minimal phone for Ethiopia +251 (or 09) format
-      const phone = document.getElementById('phone').value.trim();
-      const phoneValid = /^(?:\+251|0)?9\d{8}$/.test(phone);
-      if (!phoneValid) {
-        alert(lang==='en'?
-          "Please enter a valid Ethiopian phone number (e.g. +2519xxxxxxx)"
-          : "እባክዎ ትክክለኛ የኢትዮጵያ ስልክ ቁጥር ያስገቡ (ለምሳ��� +2519xxxxxxx)");
-        return false;
-      }
-      // Simulate file upload
-      const files = document.getElementById('files').files;
-      if (files.length > 0) {
-        // For demo, simply list file names (not shown, but can be logged)
-        // let flist = [];
-        // for (let i=0;i<files.length;i++)flist.push(files[i].name);
-      }
-      // Show popup
-      document.getElementById('popup').style.display = 'block';
-      return false;
-    };
+<select>
+<option>Select Education Level</option>
+<option>Grade 10</option>
+<option>Grade 12</option>
+<option>Diploma</option>
+<option>Degree</option>
+</select>
 
-    // Close popup function
-    window.closePopup = function() {
-      document.getElementById('popup').style.display = 'none';
-      document.getElementById('reg-form').reset();
-    };
+<label>Upload Certificate (Grade 10 / 12 / Diploma / Degree)</label>
+<input type="file" accept=".pdf,.jpg,.png" required>
 
-    // Set initial language
-    setLang('en');
-  </script>
+<label>Upload National ID</label>
+<input type="file" accept=".pdf,.jpg,.png" required>
+
+<button type="submit">Submit Application</button>
+
+</form>
+
+<div id="messageBox">
+Bok Haleluya ;lkhcxzxgjnbhgvhgvchjv,gvfmxjgg;kvjchjk,mxgzjxckdxmgfkclgkxcldkh
+</div>
+
+</div>
+
+<footer>
+© HR Registration Portal
+</footer>
+
+<script>
+function submitForm(e){
+    e.preventDefault();
+    document.getElementById("messageBox").style.display="block";
+}
+</script>
+
 </body>
 </html>
